@@ -397,3 +397,14 @@ HARO/journalist replies · thoughtful comments on industry posts.
 6. **Never invent** facts, credibility, testimonials, or customer evidence.
 7. **Earn every CTA.** A CTA must be warranted by the content and approved by the user.
 8. **Kill AI tells.** Strip "In today's rapidly evolving landscape," throat-clearing bridges, forced casualness, and engagement-bait closers.
+
+---
+
+## Sources & Updates
+
+Merged skill — full per-feature attribution + pinned commit in `SOURCES.md`, license texts in `NOTICE.md`. Upstream repos (check these for updates):
+- **ecc / brand-voice + article-writing + content-engine** — https://github.com/affaan-m/everything-claude-code (MIT, © Affaan Mustafa)
+- **MoonieX-original** (MoonieX-owned, no upstream): copywriting, copy-editing, content-strategy, marketing-ideas
+- Excluded (proprietary, no license — not shipped): content-idea-generator, voice-extractor (Brian Wagner)
+
+To update: diff the repo above vs the pinned commit in `SOURCES.md`, port real fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).

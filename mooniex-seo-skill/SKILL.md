@@ -328,3 +328,14 @@ Fix: The exact change to make.
 ## Related Skills
 - `homepage-audit` / `page-cro` — conversion optimization (different domain)
 - `content-strategy`, `competitor-analysis`
+
+---
+
+## Sources & Updates
+
+Merged skill — full per-feature attribution + pinned commits in `SOURCES.md`, license texts in `NOTICE.md`. Upstream repos (check these for updates):
+- **claude-seo** — https://github.com/AgriciDaniel/claude-seo (MIT)
+- **ecc / seo + seo-specialist** — https://github.com/affaan-m/everything-claude-code (MIT, © Affaan Mustafa)
+- **programmatic-seo** — https://github.com/coreyhaines31/marketingskills (MIT, © Corey Haines)
+
+To update: diff the repos above vs the pinned commits in `SOURCES.md`, port real fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).

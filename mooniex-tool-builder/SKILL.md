@@ -196,3 +196,12 @@ the generic stack above):
 - **Tailwind**: reuse the mooniex-webapp Tailwind config and design tokens; the
   design layer above guides how to differentiate each tool *within* those
   brand constraints.
+
+---
+
+## Sources & Updates
+
+Merged skill — full per-feature attribution + pinned commit in `SOURCES.md`, Apache-2.0 attribution + changes notice in `NOTICE.md`. Upstream repo (check for updates):
+- **web-artifacts-builder** + **frontend-design** — https://github.com/anthropics/skills (Apache-2.0, © Anthropic)
+
+To update: diff the repo above vs the pinned commit in `SOURCES.md`, port real fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).

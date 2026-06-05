@@ -602,3 +602,15 @@ Analytics (instrument) -> Section 4/5 Paid + Section 6 CRO (acquire & convert)
 (when shipping).**
 Each section's output is a valid input to the next; you rarely need to run all
 ten in one pass — match the request to the relevant section(s).
+
+---
+
+## Sources & Updates
+
+Merged skill — full per-feature attribution + pinned commits in `SOURCES.md`, license texts in `NOTICE.md`. Upstream repos (check these for updates):
+- **paid-advertising** — https://github.com/aitytech/agentkits-marketing (MIT, © AgentKits / AityTech)
+- **analytics** — https://github.com/coreyhaines31/marketingskills (MIT, © Corey Haines)
+- **MoonieX-original** (MoonieX-owned, no upstream): icp-builder, product-marketing, pricing-strategy, facebook-ads, page-cro, ab-test-setup, competitor-analysis, launch-strategy
+- Excluded (proprietary, no license — not shipped): homepage-audit, positioning-basics, marketing-principles (Brian Wagner)
+
+To update: diff the repos above vs the pinned commits in `SOURCES.md`, port real fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).
