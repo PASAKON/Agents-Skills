@@ -8,13 +8,16 @@ Every skill ships:
 - `NOTICE.md` — upstream license texts, kept verbatim
 - `references/`, `scripts/` — supporting material (vetted, attributed)
 
-All merged content is **MIT-licensed**.
+All merged content is **permissively licensed** (MIT, Apache-2.0, or MoonieX-original) — see each skill's `SOURCES.md` + `NOTICE.md` for exact per-feature licensing.
 
 ## Skills
 
-| Skill | Domain | Install |
-|---|---|---|
-| [`mooniex-seo-skill`](./mooniex-seo-skill) | SEO — technical, on-page, schema, Core Web Vitals, content/E-E-A-T, programmatic SEO, GEO/AI-search | `npx skills add PASAKON/mooniex-claude-skills/mooniex-seo-skill` |
+| Skill | Domain | License | Install |
+|---|---|---|---|
+| [`mooniex-seo-skill`](./mooniex-seo-skill) | SEO — technical, on-page, schema, CWV, content/E-E-A-T, programmatic, GEO | MIT | `npx skills add PASAKON/mooniex-claude-skills/mooniex-seo-skill` |
+| [`mooniex-growth-skill`](./mooniex-growth-skill) | Growth / marketing-ops — ICP, positioning, pricing, paid + Meta ads, CRO, A/B, competitor, GTM/launch, analytics | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-growth-skill` |
+| [`mooniex-content-skill`](./mooniex-content-skill) | Content / copy — copywriting, editing, content strategy, brand voice, channel adaptation, long-form | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-content-skill` |
+| [`mooniex-tool-builder`](./mooniex-tool-builder) | Build polished web tools — calculators, dashboards, widgets + production UI design | Apache-2.0 | `npx skills add PASAKON/mooniex-claude-skills/mooniex-tool-builder` |
 
 ## Governance
 Maintained per the MoonieX wiki: `playbooks/skill-maintenance.md` (the freshness ritual — check pinned upstreams, port only real fixes, re-pin) + `skills-registry.md` (index).
