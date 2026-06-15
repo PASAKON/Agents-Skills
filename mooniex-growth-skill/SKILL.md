@@ -15,7 +15,11 @@ description: >-
   battlecard, sales enablement, pricing, pricing page, freemium, tiered pricing,
   go-to-market, GTM, product launch, Product Hunt, Hacker News launch, waitlist,
   competitor analysis, competitive matrix, SWOT, growth analytics, GA4,
-  conversion tracking, UTM, event tracking, or attribution.
+  conversion tracking, UTM, event tracking, attribution, signup flow CRO,
+  signup conversion, registration friction, onboarding flow optimization,
+  referral program, affiliate program, refer-a-friend, viral loop, lead magnet,
+  gated content, content upgrade, free tool strategy, engineering as marketing,
+  community-led growth, community strategy, or ambassador program.
 ---
 
 # MoonieX Growth & Marketing-Ops Skill
@@ -341,6 +345,8 @@ speed, trust -> credentials, risk -> guarantee, effort -> ease), FAQ (5-8 from
 sales/support), repeated final CTA.
 
 ### Form optimization
+*(best-of: form-cro)*
+
 | Fields | Impact on CR |
 |---|---|
 | 1 (email) | baseline (highest) |
@@ -350,6 +356,43 @@ sales/support), repeated final CTA.
 Single column, labels above fields, inline validation, pre-fill, buttons
 instead of dropdowns (<5 options), honeypot not CAPTCHA. Multi-step for 5+
 fields (+20-40%).
+
+**Field reduction (every field has a cost):** for each field ask — do we need
+this *before* we can help them, can we get it another way (infer company from
+email domain, enrich post-submit), can we ask it later? Defer everything
+non-essential to progressive profiling. Sensitive fields (phone, company size)
+last, after commitment is built.
+
+**Single-step vs. multi-step:** single-step for ≤3-4 fields / high-intent
+traffic; multi-step (one topic per step, progress indicator "step X of Y", back
+navigation, save-on-refresh) once you cross 5 fields or have logically distinct
+sections. Progressive-commitment order: low-friction start (email) → more detail
+→ qualifying questions.
+
+**Validation & error UX:** inline/real-time validation on field blur (not
+aggressively mid-typing); specific, fixable error messages near the field
+("Please enter a valid email, e.g. name@company.com" not "Invalid input");
+never clear entered data on error; on submit, focus the first error field and
+summarize if multiple. Email field: single (no confirm field) + typo detection
+(gmial.com → gmail.com).
+
+**Smart defaults, autofill & mobile:** pre-fill known/returning-visitor data,
+autocomplete attributes for browser autofill, smart defaults where a sensible
+one exists; correct mobile keyboards per field type (`type="email"` / `tel` /
+`number`), 44px+ tap targets, single column, sticky submit.
+
+**Trust near submit + button copy:** privacy reassurance ("No spam,
+unsubscribe anytime" / "We'll never share your number"), effort cue ("Takes 30
+seconds"), security badge only if collecting sensitive data, a testimonial
+adjacent to the form. Button = action + outcome ("Get My Free Quote", not
+"Submit"); show a loading state on click. Track form-start rate, completion
+rate, and per-field drop-off to find the leaky field.
+
+**MoonieX:** apply this to the **broker-connect (MT5 account-link) form** — ask
+only the MT5 ID/account fields genuinely required to verify the IB link, defer
+the rest, validate the account number inline, and reassure ("we only read your
+trade volume for rebates") right at the submit button — and to the **register
+form** (keep it to email/phone + minimal, see §11).
 
 ### Speed
 | Load | Impact |
@@ -590,6 +633,227 @@ triggers, properties populate, no duplicates, cross-device, conversions
 recorded, no PII leak. Privacy: consent mode (wait for consent), IP
 anonymization, collect only what you need, support user deletion (EU/UK/CA
 cookie consent).
+
+---
+
+## 11. Signup-Flow CRO
+*(best-of: signup-flow-cro; distinct from §6 landing CRO — this is the
+register / account-creation / activation flow itself, and uses §6 form rules as
+its foundation)*
+
+§6 optimizes the page that *leads to* signup; this section optimizes the
+**signup flow** — every screen between "clicked sign up" and "activated."
+
+### Signup friction audit
+Map every step and field, then attack the worst. For each field ask the §6
+reduction questions; the typical priority is Essential (email **or** phone,
+password) / Often-needed (name) / Usually-deferrable (company, role, team size,
+phone, address). Count steps, list required fields, find the drop-off step.
+
+### Auth method trade-offs (social vs. email vs. OTP)
+- **Social login** (Google/Apple/Microsoft/SSO): often the highest-converting —
+  place prominently, frequently as the primary option, visually separated from
+  the email form; pick the providers your audience actually uses.
+- **Email + password:** show the password toggle + requirements upfront (not
+  after failure), allow paste, strength meter over rigid rules; consider
+  passwordless / magic-link to skip password friction entirely.
+- **OTP (phone/SMS or email code):** lowest typing, mobile-friendly, doubles as
+  verification — but adds a code-entry step and SMS deliverability risk; only
+  require it when verification is genuinely needed.
+
+### Progressive disclosure & deferred fields
+Value first, signup second — let users experience as much as possible before the
+account wall. Then **one field per step** where it reduces perceived effort,
+lead with the easy fields, push customization/qualifying questions to *after*
+account creation (or into onboarding). Don't show every option at once.
+
+### Value reassurance & uncertainty removal at signup
+"No credit card required" / "Free forever" / "14-day trial" near the CTA,
+privacy note, a testimonial, and a clear preview of *what happens after signup*
+(no surprise steps). Set expectations ("Takes 30 seconds").
+
+### Post-submit / verification & time-to-first-value
+Minimize the gap to the first "aha." Prefer instant access with verification
+deferred or via magic link; let users explore while a verification email is
+pending; clear resend + "check spam" + change-email options; auto-login after
+signup rather than bouncing to a login screen.
+
+### Dropoff diagnosis by step
+Instrument each step (focus/blur/error per field, step progression, time
+between steps, social-vs-email ratio) and read drop-off per step, not just an
+overall rate — the leak is almost always one specific step or field.
+
+**MoonieX:** optimize the `/register` → OTP → first-login path. The phone/email
+OTP is the natural verification step — keep the form before it to the minimum
+(phone or email only), defer broker/IB details to after the account exists, and
+get the user to first value (their rebate dashboard / a calculator result) fast.
+Critically, the signup steps are currently **unmeasured** — events like
+`broker_connect_started` and `broker_verified` aren't fired, so per-step
+drop-off is invisible. **Recommend instrumenting each step** (`register_started`,
+`otp_sent`, `otp_verified`, `first_login`, then `broker_connect_started` →
+`broker_verified`) per §10's naming convention before optimizing — you can't fix
+a funnel you can't see.
+
+---
+
+## 12. Growth Loops
+
+Acquisition and retention compounders that feed each other. Pick the loop(s)
+that fit; instrument every one per §10 (an unmeasured loop can't be tuned).
+
+### 12.1 Referral Program
+*(best-of: referral-program)*
+
+**Program design — the loop:** Trigger moment → Share action → Referred converts
+→ Reward → (back to trigger). Place the ask at high-intent moments (right after
+an "aha," a milestone, great support, a renewal/upgrade), not randomly. Lead
+with the highest-converting share mechanism (in-product share > personalized
+link > email invite > social > code).
+
+**Incentive structure — one-sided vs. two-sided:**
+- *One-sided* (referrer only): simpler, fits high-value products; risk = no
+  urgency for the referred.
+- *Two-sided* (both parties): higher conversion, win-win framing — the default.
+- *Tiered/gamified:* sustains repeat referrals (cf. Morning Brew swag tiers).
+
+**Reward type & timing:** cash/credit, product credit, free months, feature
+unlock, swag, or charity — match to product (credit drives usage; cash feels
+transactional). Size it with `Max reward = (LTV × gross margin) − target CAC`.
+Pay **after** the referred user activates (not on signup) to blunt fraud.
+
+**Fraud guardrails:** email verification, device/IP signals, delayed payout
+after a meaningful action + activity threshold, reward clawback on
+refund/chargeback, caps per period and lifetime, rewards in product credit
+(less attractive to abusers).
+
+**Viral-loop math:** k-factor `K = invites_sent × invite_conversion`; K>1 =
+self-sustaining viral growth, K<1 = referrals amplify other channels (still
+valuable). Watch **cycle time** (trigger → referred activates) — a smaller K
+with a fast cycle can out-compound a bigger slow one. Referral rate benchmark:
+good 10-25% of customers refer, great 25-50%. Referred users typically have
+higher LTV and lower churn — track them as a cohort.
+
+**Placement:** prominent in-product prompt + email reminders to non-referrers
+(day 7 / 30 / post-milestone) + a referral landing page that surfaces the
+referrer's endorsement.
+
+**MoonieX:** this is a **user refer-a-friend** loop (one trader invites another,
+both get a small reward) and must stay **distinct from the existing IB /
+affiliate program** (revenue-share commission to partners who may not be
+customers — the broker-rebate business itself). Don't conflate the two: the
+referral loop drives peer signups with light incentives; the IB program is the
+ongoing commission engine. (Affiliate-program design — commission tiers, cookie
+windows, partner enablement — also lives in this skill if you formalize the IB
+side, but keep the two programs and their tracking separate.)
+
+### 12.2 Lead Magnets
+*(best-of: lead-magnets)*
+
+Gated content / content upgrades that trade value for an email (then nurture →
+product). Principles: solve **one** specific problem, match the buyer stage
+(awareness = educate, consideration = compare, decision = implement), high
+perceived value + low time investment (consumable <10 min), and a **natural path
+to the product** — the magnet should solve a problem your product also solves.
+
+**Magnet types:** checklist / cheat-sheet (low effort), template
+(doc/sheet/Notion), swipe file, ebook/guide, email or video mini-course,
+quiz/assessment (also segments leads), webinar, resource library. One format —
+don't mix ebook + video + spreadsheet.
+
+**Value vs. friction (gating):** full gate (max capture, less reach) vs. partial
+gate (preview + gated full) vs. ungated-with-optional-capture vs. inline content
+upgrade (converts 2-5x a generic CTA). Ask for the minimum — email-only
+converts best; every extra field costs ~5-10% (see §6). Frame the exchange:
+obvious value ("the full 25-page guide, free"), a preview/mockup, social proof
+("downloaded by 5,000+"), risk reducer ("no spam, unsubscribe anytime").
+
+**Distribution:** in-post content upgrades, exit-intent/scroll popups matched to
+page content, social teasers, paid lead ads / retargeting, partner
+co-promotion.
+
+**Capture → nurture handoff:** don't waste the thank-you page (confirm delivery
++ offer the next step). Deliver instantly (or email to verify), then a nurture
+sequence relevant to the magnet topic with a clear path to product — this handoff
+is where most lead magnets leak. Benchmarks: LP CR 20-40% warm / 5-15% cold;
+judge by lead-to-customer rate, not raw captures.
+
+**MoonieX:** strong fits for Thai retail traders — e.g. a "broker fee / spread
+comparison sheet," an "XAUUSD trading-cost cheat-sheet," or a "rebate-maximizing
+checklist" — gated for email/LINE, then nurtured toward a broker signup under
+MoonieX's IB link.
+
+### 12.3 Free-Tool Strategy (engineering-as-marketing)
+*(best-of: free-tool-strategy)*
+
+Free tools as a triple play: acquisition (shareable, link-worthy), SEO (rank for
+"[thing] calculator" + attract backlinks because tools are referenceable), and
+lead-gen. The tool must be genuinely useful **standalone**, adjacent to the core
+product, simple/focused, and worth it (`lead value × leads > build + maintenance`,
+plus SEO + brand halo).
+
+**Tool selection:** calculators (numeric decisions), generators, analyzers/
+auditors (curiosity + reveal a problem you solve), testers/validators, resource
+libraries. Score candidates on search demand, audience-to-buyer match,
+uniqueness, natural path to product, build feasibility, maintenance burden,
+link/share potential. Ship an MVP (core function, clean input→output, mobile,
+basic capture) and skip accounts/saving/edge-cases initially.
+
+**Lead-capture pattern:** ungated tool with optional email-to-save/share-results
+(max usage) → partial gate (preview free, email for the full report) → full gate
+(high-value only). Value exchange explicit, email-only, show a preview of what
+they get; then instant result email + a topic-relevant nurture toward the
+product. Technical SEO matters: fast, mobile, crawlable (not JS-only), proper
+meta + schema.
+
+**Distribution:** launch (email, blog/landing page, social, Product Hunt) +
+ongoing (tool keywords + supporting content + link outreach to "best free tools
+for X" roundups) + product integration (link from sales/onboarding).
+
+**MoonieX:** the **6 live calculators** (rebate-calc, position-size, pip,
+risk-reward, xau-alert, economic-calendar) currently only **link out via
+`ToolsCta`** with no capture and no measurement — they're pure SEO/brand right
+now. Upgrade them into the loop: add an optional email/LINE capture ("save your
+result" / "get the XAU alert by LINE") and **measure tool → signup** (fire
+`tool_used` {tool} → `tool_lead_captured` → attribute to `signup_completed` /
+broker signup per §10). This turns the existing tool factory into a lead engine
+instead of a dead-end SEO asset.
+
+### 12.4 Community-Led Growth
+*(best-of: community-marketing)*
+
+Community as a retention + referral compounder. Build around a **shared identity**
+(who members are/aspire to be), not the product — members come for the product,
+stay for the people. **Value flows to members first** (exclusive knowledge/early
+signals, peer connection, status, roadmap influence).
+
+**The flywheel:** members join → get value → engage → create content / help
+others → new members discover → repeat. Every decision: does it accelerate or
+slow the loop? Launch from zero by hand-recruiting 20-50 founding members,
+setting culture explicitly, seeding conversations, and doing un-scalable things
+(welcome everyone, reply to every post) to buy social proof.
+
+**Advocates / ambassadors:** ~1% of members create ~90% of value — find people
+already recommending you unprompted, make the ask 1:1, give meaningful benefits
+(early signals, recognition, revenue share) + tools (referral links → §12.1,
+shareable assets, a private channel), and measure the traffic/signups they
+drive.
+
+**Engagement cadence:** recurring rituals build habit — a weekly "what are you
+trading / what are you working on?" thread, monthly AMA, seasonal challenge,
+plus a new-member journey (pinned welcome, intro channel, "start here"). Watch
+health signals: new-member post rate within 7 days, thread reply rate, % content
+from non-staff, lurker ratio; warning sign = most posts are from staff.
+
+**Community → product loop:** mine top questions into a knowledge base
+(support deflection), recognize members who help others, and **close the loop**
+— when community feedback ships, announce it and credit the members. Feeds §1
+(real customer language) and churn reduction.
+
+**MoonieX:** the **VIP LINE group / OpenChat** is the natural engine — run it as
+a retention + referral loop, not a broadcast channel: identity = serious Thai
+traders cutting their costs, rituals = daily XAU/market threads and rebate-win
+shoutouts, advocates = top members who pull in friends under the IB link (tie to
+§12.1), and route real questions/feedback back into LuNar's KB and the roadmap.
 
 ---
 
