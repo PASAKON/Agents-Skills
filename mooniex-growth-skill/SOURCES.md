@@ -12,6 +12,14 @@ established by (a) resolving each skill's symlink/realpath, (b) byte/length
 diffing local skills against their external namesakes, and (c) scanning each
 SKILL.md for author/copyright footers. Findings recorded below.
 
+> **Extended 2026-06-15:** +§11 Signup-Flow CRO, +§12 Growth Loops (12.1
+> Referral Program, 12.2 Lead Magnets, 12.3 Free-Tool Strategy, 12.4
+> Community-Led Growth), enriched §6 forms. New sources: `form-cro`,
+> `signup-flow-cro`, `referral-program`, `free-tool-strategy` (all MIT —
+> AgentKits/AityTech, `external/agentkits-marketing`); `lead-magnets`,
+> `community-marketing` (both MIT — Corey Haines, `external/marketingskills`).
+> All 6 are permissive (MIT); attribution given below.
+
 ---
 
 ## 1. Per-feature attribution table
@@ -34,6 +42,12 @@ SKILL.md for author/copyright footers. Findings recorded below.
 | Sec 9 Launch tiers (Major/Medium/Minor) + sales-enablement package | `product-marketing` | MoonieX original | MoonieX-owned | **Taken** — complements launch-strategy with tiered framing |
 | Sec 10 Analytics — principles, event naming, essential events, GA4/GTM, UTM, validation, privacy | `analytics` (symlink) | marketingskills by Corey Haines — github.com/coreyhaines31/marketingskills | **MIT** (c) 2025 Corey Haines | **Taken (best-of: analytics)** — permissive; best measurement reference |
 | Operating principles (context-first intake, decision-not-data, evidence-grounding) | `marketing-principles` + `analytics` + `positioning-basics` | mixed (see concerns) | mixed | **Concept taken, Wagner prose dropped** — "context before output" is generic; restated in MoonieX words, not copied |
+| Sec 6 Form optimization enrichment (field reduction, multi-step vs single-step, inline/error-UX, smart defaults & autofill, mobile keyboards, trust near submit, progress indicators) | `form-cro` | AgentKits Marketing by AityTech — github.com/aitytech/agentkits-marketing | **MIT** (c) 2024-2025 AgentKits Team (AityTech) | **Taken (best-of: form-cro)** — permissive; deepest form-field optimization; merged into existing §6 form subsection, not duplicated |
+| Sec 11 Signup-Flow CRO (signup friction audit, social/email/OTP trade-offs, progressive disclosure & deferred fields, single-field-per-step, password/OTP friction, value reassurance, post-submit/verification, dropoff-by-step) | `signup-flow-cro` | AgentKits Marketing by AityTech — github.com/aitytech/agentkits-marketing | **MIT** (c) 2024-2025 AgentKits Team (AityTech) | **Taken (best-of: signup-flow-cro)** — permissive; distinct from landing CRO; new §11 |
+| Sec 12.1 Referral Program (loop design, one/two-sided + tiered incentives, reward type/timing, fraud guardrails, k-factor/cycle-time, placement) | `referral-program` | AgentKits Marketing by AityTech — github.com/aitytech/agentkits-marketing | **MIT** (c) 2024-2025 AgentKits Team (AityTech) | **Taken (best-of: referral-program)** — permissive; new §12.1; kept distinct from MoonieX IB/affiliate program |
+| Sec 12.2 Lead Magnets (gated content / content upgrades, magnet types, value-vs-friction gating, distribution, capture→nurture handoff) | `lead-magnets` | marketingskills by Corey Haines — github.com/coreyhaines31/marketingskills | **MIT** (c) 2025 Corey Haines | **Taken (best-of: lead-magnets)** — permissive; new §12.2 |
+| Sec 12.3 Free-Tool Strategy (engineering-as-marketing: tool-as-acquisition/SEO/lead-gen, selection criteria, gated/optional capture pattern, distribution) | `free-tool-strategy` | AgentKits Marketing by AityTech — github.com/aitytech/agentkits-marketing | **MIT** (c) 2024-2025 AgentKits Team (AityTech) | **Taken (best-of: free-tool-strategy)** — permissive; new §12.3; applied to MoonieX's 6 live calculators |
+| Sec 12.4 Community-Led Growth (identity-first strategy, flywheel, advocates/ambassadors, engagement cadence, community→product loop) | `community-marketing` | marketingskills by Corey Haines — github.com/coreyhaines31/marketingskills | **MIT** (c) 2025 Corey Haines | **Taken (best-of: community-marketing)** — permissive; new §12.4; applied to MoonieX VIP LINE/OpenChat |
 
 ---
 
@@ -43,6 +57,12 @@ SKILL.md for author/copyright footers. Findings recorded below.
 |---|---|---|---|---|
 | paid-advertising | AgentKits Team (AityTech) | https://github.com/aitytech/agentkits-marketing | MIT | **Included** (Sec 4) — attribution required & given |
 | analytics | Corey Haines | https://github.com/coreyhaines31/marketingskills | MIT | **Included** (Sec 10) — attribution required & given |
+| form-cro | AgentKits Team (AityTech) | https://github.com/aitytech/agentkits-marketing | MIT | **Included** (Sec 6 enrichment) — attribution required & given |
+| signup-flow-cro | AgentKits Team (AityTech) | https://github.com/aitytech/agentkits-marketing | MIT | **Included** (Sec 11) — attribution required & given |
+| referral-program | AgentKits Team (AityTech) | https://github.com/aitytech/agentkits-marketing | MIT | **Included** (Sec 12.1) — attribution required & given |
+| lead-magnets | Corey Haines | https://github.com/coreyhaines31/marketingskills | MIT | **Included** (Sec 12.2) — attribution required & given |
+| free-tool-strategy | AgentKits Team (AityTech) | https://github.com/aitytech/agentkits-marketing | MIT | **Included** (Sec 12.3) — attribution required & given |
+| community-marketing | Corey Haines | https://github.com/coreyhaines31/marketingskills | MIT | **Included** (Sec 12.4) — attribution required & given |
 | facebook-ads | MoonieX | (internal — `~/.claude/skills/facebook-ads/`) | MoonieX-owned | **Included** (Sec 5) |
 | page-cro | MoonieX | (internal — `~/.claude/skills/page-cro/`) | MoonieX-owned | **Included** (Sec 6) |
 | ab-test-setup | MoonieX | (internal — `~/.claude/skills/ab-test-setup/`) | MoonieX-owned | **Included** (Sec 7) |
