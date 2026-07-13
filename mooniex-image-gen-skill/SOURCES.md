@@ -9,6 +9,6 @@ gallery content is copied here — only tool names and usage guardrails.
 |---|---|
 | Wrapped MCP | `jau123/MeiGen-AI-Design-MCP` |
 | Repo | https://github.com/jau123/MeiGen-AI-Design-MCP |
-| What's wrapped | 8 MCP tool names (`search_gallery`, `enhance_prompt`, `get_inspiration`, `list_models`, `comfyui_workflow`, `manage_preferences`, `generate_image`, `generate_video`) — names and free/paid split only, per the MCP's own published tool list |
+| What's wrapped | 6 FREE MCP tool names only (`search_gallery`, `enhance_prompt`, `get_inspiration`, `list_models`, `comfyui_workflow`, `manage_preferences`) — per the MCP's own published tool list. The 2 paid tools (`generate_image`, `generate_video`) are explicitly NOT wrapped; the org uses its existing Fal.ai key for generation instead (CEO decision 2026-07-13) |
 | License review | **Not done.** Publisher is unverified/third-party — supply-chain review is an open item in `mooniex-agents#24`, must clear before the plugin is installed |
 | Origin issue | `mooniex-agents#24` (opened 2026-06-21, CEO) |

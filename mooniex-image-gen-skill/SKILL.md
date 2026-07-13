@@ -2,13 +2,14 @@
 name: mooniex-image-gen-skill
 description: >-
   Thin wrapper over the MeiGen AI Design MCP (jau123/MeiGen-AI-Design-MCP) —
-  a curated 1,446-prompt gallery, prompt enhancement, and multi-model image
-  generation (GPT Image 2, Nano Banana 2) for key art, posters, YT
-  thumbnails, and product concept renders. Use when a C-level agent (CMO/
-  CTO/CGO/CFO) needs a poster, thumbnail, key-art, or concept render and
-  wants gallery/inspiration search or prompt enhancement before spending on
-  actual generation. Enforces mockup-first + ask-before-paid — never calls
-  generate_image / generate_video without an explicit CEO cost OK.
+  FREE TOOLS ONLY: curated 1,446-prompt gallery, prompt enhancement, and
+  inspiration search for key art, posters, YT thumbnails, and product
+  concept renders. Use when a C-level agent (CMO/CTO/CGO/CFO) wants
+  gallery/inspiration search or prompt enhancement to land a strong prompt
+  fast. Actual image/video generation is NOT done via MeiGen's own paid
+  routing — the resulting prompt is handed to the org's existing Fal.ai
+  pipeline (FAL_API_KEY already provisioned) per normal ask-before-paid
+  rules. No MeiGen API key is used or needed (CEO decision 2026-07-13).
 status: BLOCKED — plugin not installed (see Prerequisites). Skill body is
   ready to activate once installed; do not assume the MCP tools are callable
   yet.
@@ -31,43 +32,47 @@ alone cannot install or call. Before any tool call in this skill works:
 2. **Supply-chain review** — `jau123/MeiGen-AI-Design-MCP` is a third-party,
    unverified publisher. Not yet reviewed. Get an explicit CEO/CTO OK before
    connecting it to org sessions that also hold other credentials — flag
-   this in the PR/issue, don't self-approve.
-3. **API key** — create a `meigen_sk_...` key at meigen.ai. Store per
-   **API-key-registry (IRON §34)**, `LLMs/playbooks/api-key-registry.md` —
-   add a new row + Changelog entry, value in env only, never in chat/config.
-4. Confirm pricing per image/credit at meigen.ai/model-comparison before the
-   first paid call, so the cost stated to the CEO (step below) is accurate.
+   this in the PR/issue, don't self-approve. (Lower stakes than originally
+   scoped since no MeiGen credential ever passes through it — see below.)
 
-If any of the above isn't done, tell the user this skill is not yet callable
-and point at the missing step — do not simulate output.
+**No MeiGen API key needed** (CEO decision 2026-07-13): this skill only ever
+calls MeiGen's free tools. Actual generation reuses the org's existing
+`FAL_API_KEY` (already in the registry) via the standard Fal.ai pipeline —
+do not create a `meigen_sk_...` key.
+
+If step 1 isn't done, tell the user this skill is not yet callable and point
+at the missing install step — do not simulate output.
 
 ## Tools this wraps
 
-| Free (no key) | Paid (key + credits) |
+Free tools only — this is the entire scope of this skill:
+
+| Tool | Use |
 |---|---|
-| `search_gallery` — 1,446 curated prompts | `generate_image` — routes to GPT Image 2 / Nano Banana 2 |
-| `enhance_prompt` | `generate_video` |
-| `get_inspiration`, `list_models` | |
-| `comfyui_workflow`, `manage_preferences` | |
+| `search_gallery` | search the 1,446 curated prompts |
+| `enhance_prompt` | sharpen a rough prompt into a stronger one |
+| `get_inspiration` | browse for composition/style ideas |
+| `list_models` | see what MeiGen's own gallery supports (reference only) |
+| `comfyui_workflow` | inspect workflow graphs, if useful for reference |
+| `manage_preferences` | set gallery search preferences |
+
+`generate_image` / `generate_video` (MeiGen's own paid, key-gated routing)
+are explicitly **out of scope** — never call them. Generation happens via
+Fal.ai instead (see Workflow).
 
 ## Workflow
 
-1. **Search / inspire / enhance first — always $0.** Use `search_gallery`,
+1. **Search / inspire / enhance — always $0.** Use `search_gallery`,
    `get_inspiration`, `enhance_prompt` freely to land on a strong prompt and
-   composition. No confirmation needed for these.
-2. **Mockup before spend.** Per wiki ADR `mockup-before-image-gen`
-   (2026-06-13): produce a $0 wireframe/description of the shot and get it
-   approved before any paid call — same rule as the org's existing poster
-   pipeline.
-3. **State cost, wait for OK.** Before the first `generate_image` /
-   `generate_video` call, state the exact model, exact $/image (or $/sec for
-   video) from meigen.ai/model-comparison, and the total for this batch.
-   Wait for explicit CEO OK. This mirrors `ASK-before-paid-API` — bake the
-   gate into the *call itself*, not just a prompt instruction (lesson from
-   `feedback_lunar_brevity_enforce_in_code`: guardrails phrased as prose get
-   skipped under pressure; a hard stop before the tool call doesn't).
-4. **Generate**, then hand the asset to the requesting C-level flow
-   (poster pipeline, thumbnail, etc.) same as any other generated image.
+   composition.
+2. **Hand the finished prompt to the existing Fal.ai pipeline** (`FAL_API_KEY`,
+   `ecc:fal-ai-media` skill / `scripts/mooniex_poster.py` / `gen-rebate-scenes.py`
+   as applicable) for the actual render. This skill never generates images
+   itself.
+3. **Mockup-first + ask-before-paid still apply** to that Fal.ai call, same
+   as every other org image-gen path (wiki ADR `mockup-before-image-gen`,
+   `ASK-before-paid-API`) — this skill doesn't change or bypass those, it
+   just feeds them a better prompt.
 
 ## Reconciliation vs existing org image scripts
 
@@ -93,10 +98,11 @@ C-level's skill preferences (CTO/CMO/CGO/CFO spawn configs / CLAUDE.md) so
 `search_gallery` / `enhance_prompt` are reachable from any of those chats.
 Not done yet — do this as part of activation, after Prerequisites are clear.
 
-## Acceptance (from GH #24)
+## Acceptance (from GH #24, scoped down 2026-07-13)
 
-- C-level chat can run `search_gallery` + `enhance_prompt` ($0) and, after
-  cost-OK, `generate_image` via GPT Image 2.
-- Guardrails enforced: mockup-first + ask-before-paid, both as hard stops
-  in this skill's workflow, not optional suggestions.
-- Key lives in the registry, never in chat.
+- C-level chat can run `search_gallery` + `enhance_prompt` ($0), then hand
+  the result to the existing Fal.ai pipeline for the actual render.
+- `generate_image` / `generate_video` (MeiGen's own paid routing) are never
+  called — no MeiGen key exists in this org.
+- Mockup-first + ask-before-paid still enforced on the Fal.ai call, same as
+  every other org image-gen path — this skill doesn't touch that gate.
