@@ -1,11 +1,11 @@
-# NOTICE — mooniex-content-skill
+# NOTICE — mooniex-content
 
 This skill includes content derived from third-party sources. Notices below are
 required for redistribution.
 
 ## Third-party: everything-claude-code (ECC) — MIT
 
-Portions of `mooniex-content-skill` (§5 Brand Voice, §6 Channel Adaptation,
+Portions of `mooniex-content` (§5 Brand Voice, §6 Channel Adaptation,
 §7 Long-Form Writing) are derived from the "everything-claude-code" (ECC)
 marketplace skills `brand-voice`, `article-writing`, and `content-engine`.
 

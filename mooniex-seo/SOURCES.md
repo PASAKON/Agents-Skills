@@ -1,6 +1,6 @@
-# SOURCES & Attribution — mooniex-seo-skill
+# SOURCES & Attribution — mooniex-seo
 
-`mooniex-seo-skill` is a curated merge of three upstream SEO skills. It exists so
+`mooniex-seo` is a curated merge of three upstream SEO skills. It exists so
 the MoonieX org uses ONE SEO skill instead of 3–4 overlapping ones. Every feature
 below is credited to its origin. **All three sources are MIT-licensed** —
 permissive, safe to combine and redistribute with attribution.

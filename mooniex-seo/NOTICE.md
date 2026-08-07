@@ -1,4 +1,4 @@
-# NOTICE — mooniex-seo-skill
+# NOTICE — mooniex-seo
 
 This skill is a curated merge of three **MIT-licensed** upstream sources. Their
 copyright and permission notices are preserved below as required by the MIT

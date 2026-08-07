@@ -1,6 +1,6 @@
-# SOURCES — mooniex-growth-skill
+# SOURCES — mooniex-growth
 
-Provenance, licensing, and attribution for the merged `mooniex-growth-skill`,
+Provenance, licensing, and attribution for the merged `mooniex-growth`,
 destined for the PUBLIC repo `PASAKON/mooniex-claude-skills`.
 
 Inclusion rule applied: ship only **permissive-licensed (MIT/Apache/BSD)** or

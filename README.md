@@ -14,9 +14,9 @@ All merged content is **permissively licensed** (MIT, Apache-2.0, or MoonieX-ori
 
 | Skill | Domain | License | Install |
 |---|---|---|---|
-| [`mooniex-seo-skill`](./mooniex-seo-skill) | SEO — technical, on-page, schema, CWV, content/E-E-A-T, programmatic, GEO | MIT | `npx skills add PASAKON/mooniex-claude-skills/mooniex-seo-skill` |
-| [`mooniex-growth-skill`](./mooniex-growth-skill) | Growth / marketing-ops — ICP, positioning, pricing, paid + Meta ads, CRO, A/B, competitor, GTM/launch, analytics | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-growth-skill` |
-| [`mooniex-content-skill`](./mooniex-content-skill) | Content / copy — copywriting, editing, content strategy, brand voice, channel adaptation, long-form | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-content-skill` |
+| [`mooniex-seo`](./mooniex-seo) | SEO — technical, on-page, schema, CWV, content/E-E-A-T, programmatic, GEO | MIT | `npx skills add PASAKON/mooniex-claude-skills/mooniex-seo` |
+| [`mooniex-growth`](./mooniex-growth) | Growth / marketing-ops — ICP, positioning, pricing, paid + Meta ads, CRO, A/B, competitor, GTM/launch, analytics | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-growth` |
+| [`mooniex-content`](./mooniex-content) | Content / copy — copywriting, editing, content strategy, brand voice, channel adaptation, long-form | MIT + MoonieX-original | `npx skills add PASAKON/mooniex-claude-skills/mooniex-content` |
 | [`mooniex-tool-builder`](./mooniex-tool-builder) | Build polished web tools — calculators, dashboards, widgets + production UI design | Apache-2.0 | `npx skills add PASAKON/mooniex-claude-skills/mooniex-tool-builder` |
 
 ## Governance

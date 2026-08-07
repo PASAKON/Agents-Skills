@@ -1,5 +1,5 @@
 ---
-name: mooniex-kpi-skill
+name: mooniex-kpi
 owner: CGO
 origin: mooniex-curated
 scope: >-
@@ -7,7 +7,7 @@ scope: >-
   tracking architecture (System A webapp_user_events, System B
   webapp_user_activity_log) plus the known G1-G4 measurement gaps. Documents what
   is actually instrumented, not what should be. Does not run campaigns.
-description: The org's measurement authority — KPI choice, north-star, attribution, CAC/LTV/ROAS, funnel and cohort metrics, event tracking, and the real System A/B tracking tables. Trigger on /mooniex-kpi-skill and on "north star", "attribution", "CAC", "LTV", "ROAS", "tracking plan", "funnel metrics", "cohort". Use instead of the generic analytics skill.
+description: The org's measurement authority — KPI choice, north-star, attribution, CAC/LTV/ROAS, funnel and cohort metrics, event tracking, and the real System A/B tracking tables. Trigger on /mooniex-kpi and on "north star", "attribution", "CAC", "LTV", "ROAS", "tracking plan", "funnel metrics", "cohort". Use instead of the generic analytics skill.
 ---
 
 # MoonieX KPI & Measurement Skill
@@ -18,7 +18,7 @@ revenue honestly, and — most importantly — the **real** MoonieX tracking
 architecture, so every agent measures the same way against the same tables
 instead of inventing parallel definitions.
 
-This is the codebase-grounded companion to `mooniex-growth-skill` §10 (Growth
+This is the codebase-grounded companion to `mooniex-growth` §10 (Growth
 Analytics & Measurement). Growth §10 is the quick "instrument before you spend"
 reference that feeds the acquisition/CRO/launch sections; **this** skill is where
 you come for the precise data model, attribution math, the event catalog, and
@@ -38,7 +38,7 @@ naming and the canonical tables.
 3. **Pre-register success metrics and sample size.** Before a test or a campaign,
    write the primary metric, the minimum effect worth detecting, and how long /
    how much traffic it needs. Decide the decision rule up front (cross-link
-   mooniex-growth-skill §7 for the sample-size formula and table).
+   mooniex-growth §7 for the sample-size formula and table).
 4. **Respect attribution windows.** Match the window to the real decision lag.
    MoonieX has a long, off-platform conversion lag (click rebate link → open a
    broker account → fund → trade enough lots to rebate), so short last-click
@@ -379,7 +379,7 @@ the sparse early weeks.
 | `/admin/finance` | `getCfoSnapshot` / `webapp_cfo_daily_rollup` | 14-day daily burn + finance detail (`/admin/cfo` permanently redirects here) |
 
 ### Weekly funnel review ritual
-Once a week (cross-ref mooniex-growth-skill §10 cadence): pull the funnel +
+Once a week (cross-ref mooniex-growth §10 cadence): pull the funnel +
 cohort + UTM views, compare to the prior week, find the **single biggest drop-off
 or the biggest leading-indicator move**, and assign **one** decision/experiment.
 Confirm any side-effect-bearing metric against the source of truth (broker APIs
@@ -403,7 +403,7 @@ You rarely run all six in one pass — match the request:
 - "Build/read a dashboard" → §6 (reuse the admin surfaces).
 
 For the broader growth strategy these metrics feed (paid, CRO, launch), hand off
-to **mooniex-growth-skill** — this skill stops at "measured correctly," growth §3-9
+to **mooniex-growth** — this skill stops at "measured correctly," growth §3-9
 takes it from there.
 
 ---

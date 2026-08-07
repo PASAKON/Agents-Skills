@@ -2,7 +2,7 @@
 
 Source: **programmatic-seo** from `coreyhaines31/marketingskills` (MIT, Copyright (c)
 2025 Corey Haines) — https://github.com/coreyhaines31/marketingskills . Loaded on
-demand by `mooniex-seo-skill` §7. See `../SOURCES.md` for full attribution.
+demand by `mooniex-seo` §7. See `../SOURCES.md` for full attribution.
 
 Each playbook is a repeating keyword pattern you can template at scale. Always
 apply the core rules first (unique value per page · proprietary data wins ·
@@ -34,4 +34,4 @@ in a type-split XML sitemap.
 > MoonieX fit: playbooks 3 (conversions), 9 (glossary), 11 (directory), and 12
 > (profiles) map directly to the trading-tools funnel (e.g. "what is a pip",
 > "XAU to USD", "forex trading tools", per-broker pages) — pair with
-> `mooniex-seo-skill` §7 for the build framework.
+> `mooniex-seo` §7 for the build framework.

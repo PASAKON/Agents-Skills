@@ -1,4 +1,4 @@
-# SOURCES — mooniex-image-gen-skill
+# SOURCES — mooniex-image-gen
 
 Unlike the other `mooniex-*-skill` folders in this repo, this is **not** a
 merged derivative of third-party skill content. It is a thin operating-manual

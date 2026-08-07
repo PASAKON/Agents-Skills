@@ -1,4 +1,4 @@
-# NOTICE — mooniex-kpi-skill
+# NOTICE — mooniex-kpi
 
 This skill is a merged work. Portions are derived from a third-party
 permissively-licensed source; the remainder is MoonieX original (a survey of

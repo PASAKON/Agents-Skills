@@ -1,13 +1,13 @@
 ---
-name: mooniex-seo-skill
+name: mooniex-seo
 owner: CGO
 origin: mooniex-curated
 scope: >-
   Search visibility end to end — technical SEO, crawlability, on-page, Schema.org,
   Core Web Vitals, sitemaps/robots, content and E-E-A-T, keyword mapping, internal
   linking, programmatic SEO, GEO/AI-search. A curated merge — see SOURCES.md.
-  Conversion-rate work is CRO, not SEO — use mooniex-growth-skill.
-description: The org's single SEO skill — technical, on-page, schema, Core Web Vitals, sitemaps, content/E-E-A-T, programmatic, and GEO/AI-search. Trigger on /mooniex-seo-skill and on "SEO", "SEO audit", "technical SEO", "schema markup", "sitemap", "indexation", "keyword", "AI search", "ทำ SEO". Use instead of ecc:seo, ecc:seo-specialist, programmatic-seo, claude-seo.
+  Conversion-rate work is CRO, not SEO — use mooniex-growth.
+description: The org's single SEO skill — technical, on-page, schema, Core Web Vitals, sitemaps, content/E-E-A-T, programmatic, and GEO/AI-search. Trigger on /mooniex-seo and on "SEO", "SEO audit", "technical SEO", "schema markup", "sitemap", "indexation", "keyword", "AI search", "ทำ SEO". Use instead of ecc:seo, ecc:seo-specialist, programmatic-seo, claude-seo.
 ---
 
 # MoonieX SEO Skill

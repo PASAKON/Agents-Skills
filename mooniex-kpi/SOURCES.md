@@ -1,6 +1,6 @@
-# SOURCES — mooniex-kpi-skill
+# SOURCES — mooniex-kpi
 
-Provenance, licensing, and attribution for `mooniex-kpi-skill`, destined for the
+Provenance, licensing, and attribution for `mooniex-kpi`, destined for the
 PUBLIC repo `PASAKON/mooniex-claude-skills`.
 
 Inclusion rule applied: ship only **permissive-licensed (MIT/Apache/BSD)** or
@@ -8,7 +8,7 @@ Inclusion rule applied: ship only **permissive-licensed (MIT/Apache/BSD)** or
 and one MoonieX codebase survey — so there are no licensing grey areas.
 
 This skill is the org's **deep measurement** layer and the codebase-grounded
-companion to `mooniex-growth-skill` §10 (Growth Analytics & Measurement). It does
+companion to `mooniex-growth` §10 (Growth Analytics & Measurement). It does
 not duplicate or contradict growth §10; it extends it with the real MoonieX
 tracking architecture, attribution math, event catalog, and measurement backlog.
 
@@ -36,7 +36,7 @@ tracking architecture, attribution math, event catalog, and measurement backlog.
 | MoonieX codebase survey 2026-06-15 | MoonieX | internal — `mooniex-webapp`, `mooniex-claudeflow` | MoonieX-owned | **Included** (§3-6) |
 
 > The `analytics-attribution` source is the same upstream repo
-> (agentkits-marketing) that `mooniex-growth-skill` Section 4 (paid-advertising)
+> (agentkits-marketing) that `mooniex-growth` Section 4 (paid-advertising)
 > draws from, pinned at the same commit. Its `analytics-attribution/SKILL.md` is
 > a distinct skill file from the `analytics` skill used in growth §10 (that one
 > is Corey Haines' `marketingskills`). This KPI skill deliberately leans on the
@@ -70,5 +70,5 @@ copyrighted prose is reproduced; the cited file/function/table/line names are
 factual references to MoonieX-owned code, not copied source. No copyleft (GPL)
 or proprietary third-party content is present in the merged output.
 
-**No EXCLUSIONS** — unlike `mooniex-growth-skill`, this skill draws on no
+**No EXCLUSIONS** — unlike `mooniex-growth`, this skill draws on no
 non-permissive third-party skills (no Brian Wagner / unknown-license material).

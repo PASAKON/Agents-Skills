@@ -1,13 +1,13 @@
 ---
-name: mooniex-retention-skill
+name: mooniex-retention
 owner: CGO
 origin: mooniex-curated
 scope: >-
   Post-signup lifecycle — activation, onboarding, aha moment, habit loops, drip
   email, churn, win-back, dunning. §5 is codebase-grounded (verified-but-silent
   cohort, activation gap, broken weekly digest). A curated merge — see SOURCES.md.
-  For pre-signup acquisition use mooniex-growth-skill.
-description: The org's activation + retention + lifecycle skill — onboarding, aha moment, habit loops, drip email, churn, win-back, dunning. Trigger on /mooniex-retention-skill and on "retention", "churn", "people keep canceling", "win-back", "dunning", "activation", "onboarding", "re-engagement", "ลูกค้าหาย".
+  For pre-signup acquisition use mooniex-growth.
+description: The org's activation + retention + lifecycle skill — onboarding, aha moment, habit loops, drip email, churn, win-back, dunning. Trigger on /mooniex-retention and on "retention", "churn", "people keep canceling", "win-back", "dunning", "activation", "onboarding", "re-engagement", "ลูกค้าหาย".
 ---
 
 # MoonieX Retention & Lifecycle Skill

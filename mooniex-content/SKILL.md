@@ -1,12 +1,12 @@
 ---
-name: mooniex-content-skill
+name: mooniex-content
 owner: CMO
 origin: mooniex-curated
 scope: >-
   Copywriting, copy editing, content strategy, brand voice, channel adaptation,
   long-form. A curated merge of several upstream skills — per-feature attribution
   in SOURCES.md, upstream licences in NOTICE.md. Not image or video production.
-description: The org's single skill for copywriting, copy editing, content strategy, and brand voice. Trigger on /mooniex-content-skill and any copy request — "write copy", "ad copy", "landing page copy", "edit my copy", "proofread", "content calendar", "brand voice", "เขียนคอนเทนต์", "เขียนแคปชั่น". Use instead of ecc:brand-voice, ecc:article-writing, ecc:content-engine, copywriting, copy-editing, content-strategy.
+description: The org's single skill for copywriting, copy editing, content strategy, and brand voice. Trigger on /mooniex-content and any copy request — "write copy", "ad copy", "landing page copy", "edit my copy", "proofread", "content calendar", "brand voice", "เขียนคอนเทนต์", "เขียนแคปชั่น". Use instead of ecc:brand-voice, ecc:article-writing, ecc:content-engine, copywriting, copy-editing, content-strategy.
 ---
 
 # MoonieX Content Skill

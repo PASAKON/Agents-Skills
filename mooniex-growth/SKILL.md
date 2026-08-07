@@ -1,13 +1,13 @@
 ---
-name: mooniex-growth-skill
+name: mooniex-growth
 owner: CGO
 origin: mooniex-curated
 scope: >-
   Acquisition and conversion: paid/Meta ads, CRO, A/B tests, funnels, ICP,
   positioning, pricing, GTM, signup-flow CRO, referral and growth loops. A curated
   merge — see SOURCES.md / NOTICE.md. For retention and lifecycle after signup use
-  mooniex-retention-skill; for measurement use mooniex-kpi-skill.
-description: The org's single acquisition + conversion skill — paid/Meta ads, CRO, A/B tests, funnels, ICP, positioning, pricing, GTM, referral and growth loops. Trigger on /mooniex-growth-skill and on "ads", "ROAS", "CRO", "landing page not converting", "A/B test", "pricing", "launch", "competitor", "ยิงแอด". Use instead of paid-advertising, facebook-ads, page-cro, ab-test-setup, launch-strategy, icp-builder, pricing-strategy.
+  mooniex-retention; for measurement use mooniex-kpi.
+description: The org's single acquisition + conversion skill — paid/Meta ads, CRO, A/B tests, funnels, ICP, positioning, pricing, GTM, referral and growth loops. Trigger on /mooniex-growth and on "ads", "ROAS", "CRO", "landing page not converting", "A/B test", "pricing", "launch", "competitor", "ยิงแอด". Use instead of paid-advertising, facebook-ads, page-cro, ab-test-setup, launch-strategy, icp-builder, pricing-strategy.
 ---
 
 # MoonieX Growth & Marketing-Ops Skill

@@ -1,6 +1,6 @@
-# SOURCES — mooniex-content-skill
+# SOURCES — mooniex-content
 
-Attribution and license provenance for the merged `mooniex-content-skill`.
+Attribution and license provenance for the merged `mooniex-content`.
 Target repo `PASAKON/mooniex-claude-skills` is **PUBLIC**, so only permissive
 (MIT/Apache/BSD) or MoonieX-owned content ships verbatim. Anything with an
 unknown/non-permissive license is **excluded entirely** and flagged below.

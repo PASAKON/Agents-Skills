@@ -1,5 +1,5 @@
 ---
-name: mooniex-image-gen-skill
+name: mooniex-image-gen
 owner: CMO
 origin: mooniex-org
 scope: >-
@@ -8,7 +8,7 @@ scope: >-
   the finished prompt is handed to the org's Fal.ai pipeline under the
   ask-before-paid rule (CEO decision 2026-07-13). Requires the meigen plugin
   installed and /meigen:setup run.
-description: Gallery search and prompt enhancement via the MeiGen MCP — free tools only. Trigger on /mooniex-image-gen-skill when writing an image prompt for key art, posters, or thumbnails. Does NOT generate the image — no MeiGen key exists, so the finished prompt goes to the org's Fal.ai pipeline under ask-before-paid rules.
+description: Gallery search and prompt enhancement via the MeiGen MCP — free tools only. Trigger on /mooniex-image-gen when writing an image prompt for key art, posters, or thumbnails. Does NOT generate the image — no MeiGen key exists, so the finished prompt goes to the org's Fal.ai pipeline under ask-before-paid rules.
 ---
 
 # MoonieX Image-Gen Skill (MeiGen MCP wrapper)
