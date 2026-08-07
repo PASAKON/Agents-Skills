@@ -1,18 +1,13 @@
 ---
 name: mooniex-tool-builder
-description: >-
-  Build polished, production-grade web tools — calculators, dashboards,
-  widgets, and interactive mini-apps — for the MoonieX trading-tool factory.
-  Use this skill when the user asks to build a web tool, calculator, dashboard,
-  widget, interactive component, mini-app, or landing-tool, OR to design /
-  beautify a frontend UI (component, page, layout, styling) so it looks
-  production-grade instead of generic "AI slop". Combines a functional
-  component-building layer (state, routing, shadcn/ui, bundling) with a
-  distinctive design-system layer (typography, color, motion, spatial
-  composition). Examples: "build a pip calculator", "make a margin calculator
-  widget", "trading dashboard", "lot-size tool", "polish this UI", "design a
-  landing-tool".
-license: Apache-2.0 (derivative of anthropics/skills — see SOURCES.md & NOTICE.md)
+owner: CTO
+origin: mooniex-curated
+scope: >-
+  Builds and designs front-end tools under /tools/* — calculators, dashboards,
+  widgets, mini-apps — combining a component layer (state, routing, shadcn/ui) with
+  a design-system layer (typography, colour, motion). Apache-2.0 curated merge, see
+  SOURCES.md. Front-end only; no backend or data pipeline work.
+description: Build production-grade web tools for the MoonieX trading-tool factory — calculators, dashboards, widgets, mini-apps — and polish frontend UI so it does not look generic. Trigger on /mooniex-tool-builder and on "build a calculator", "trading dashboard", "widget", "mini-app", "polish this UI", "ทำเครื่องมือ".
 ---
 
 # MoonieX Tool Builder

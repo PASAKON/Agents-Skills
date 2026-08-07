@@ -1,19 +1,13 @@
 ---
 name: mooniex-retention-skill
-description: >-
-  End-to-end retention and lifecycle playbook for the MoonieX org — one skill
-  spanning activation, onboarding, habit loops, lifecycle messaging, and churn
-  prevention for forex traders using the LINE bot LuNar, the trading-tool site,
-  and the credits/subscription product. Use when the user asks about: retention,
-  churn, churn rate, "people keep canceling", cancel flow, pause subscription,
-  save offer, win-back, dunning, failed payment recovery, involuntary churn,
-  re-engagement, "users not coming back", "users drop off", activation,
-  activation rate, onboarding, onboarding flow, first-run experience, aha moment,
-  time-to-value, empty states, onboarding checklist, friction audit, habit loop,
-  hook model, variable reward, streak, push notification strategy, notification
-  fatigue, lifecycle email, drip campaign, nurture sequence, welcome sequence,
-  re-engagement email, retention cohort, cohort retention curve, DAU/WAU/MAU,
-  D1/D7/D30 retention, health score, exit survey, or LINE push re-engagement.
+owner: CGO
+origin: mooniex-curated
+scope: >-
+  Post-signup lifecycle — activation, onboarding, aha moment, habit loops, drip
+  email, churn, win-back, dunning. §5 is codebase-grounded (verified-but-silent
+  cohort, activation gap, broken weekly digest). A curated merge — see SOURCES.md.
+  For pre-signup acquisition use mooniex-growth-skill.
+description: The org's activation + retention + lifecycle skill — onboarding, aha moment, habit loops, drip email, churn, win-back, dunning. Trigger on /mooniex-retention-skill and on "retention", "churn", "people keep canceling", "win-back", "dunning", "activation", "onboarding", "re-engagement", "ลูกค้าหาย".
 ---
 
 # MoonieX Retention & Lifecycle Skill

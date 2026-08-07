@@ -1,22 +1,13 @@
 ---
 name: mooniex-seo-skill
-description: >-
-  One unified SEO skill for the MoonieX org. Audit, plan, and implement search
-  optimization end to end — technical SEO, crawlability and indexation, on-page
-  optimization, Schema.org structured data, Core Web Vitals, sitemaps and
-  robots, content quality and E-E-A-T, keyword mapping, internal linking,
-  programmatic (template-at-scale) SEO, and AI-search / GEO optimization.
-  Use this when the user wants better search visibility or mentions: "SEO",
-  "SEO audit", "site audit", "technical SEO", "crawlability", "indexation",
-  "schema markup", "structured data", "JSON-LD", "rich results", "meta tags",
-  "title tags", "meta descriptions", "heading structure", "Core Web Vitals",
-  "LCP / INP / CLS", "page speed for SEO", "sitemap", "robots.txt", "canonical",
-  "hreflang", "internal linking", "keyword mapping", "keyword cannibalization",
-  "content SEO", "E-E-A-T", "programmatic SEO", "pSEO", "template pages",
-  "pages at scale", "location pages", "comparison pages", "AI Overviews",
-  "GEO", "generative engine optimization", or "AEO". This is the single SEO
-  skill — prefer it over any other SEO skill for all of the above.
-  (NOT for general conversion-rate / homepage CRO work — that is homepage-audit.)
+owner: CGO
+origin: mooniex-curated
+scope: >-
+  Search visibility end to end — technical SEO, crawlability, on-page, Schema.org,
+  Core Web Vitals, sitemaps/robots, content and E-E-A-T, keyword mapping, internal
+  linking, programmatic SEO, GEO/AI-search. A curated merge — see SOURCES.md.
+  Conversion-rate work is CRO, not SEO — use mooniex-growth-skill.
+description: The org's single SEO skill — technical, on-page, schema, Core Web Vitals, sitemaps, content/E-E-A-T, programmatic, and GEO/AI-search. Trigger on /mooniex-seo-skill and on "SEO", "SEO audit", "technical SEO", "schema markup", "sitemap", "indexation", "keyword", "AI search", "ทำ SEO". Use instead of ecc:seo, ecc:seo-specialist, programmatic-seo, claude-seo.
 ---
 
 # MoonieX SEO Skill

@@ -1,19 +1,14 @@
 ---
 name: mooniex-image-gen-skill
-description: >-
-  Thin wrapper over the MeiGen AI Design MCP (jau123/MeiGen-AI-Design-MCP) —
-  FREE TOOLS ONLY: curated 1,446-prompt gallery, prompt enhancement, and
-  inspiration search for key art, posters, YT thumbnails, and product
-  concept renders. Use when a C-level agent (CMO/CTO/CGO/CFO) wants
-  gallery/inspiration search or prompt enhancement to land a strong prompt
-  fast. Actual image/video generation is NOT done via MeiGen's own paid
-  routing — the resulting prompt is handed to the org's existing Fal.ai
-  pipeline (FAL_API_KEY already provisioned) per normal ask-before-paid
-  rules. No MeiGen API key is used or needed (CEO decision 2026-07-13).
-status: BLOCKED — plugin not installed (see Prerequisites). Skill body is
-  ready to activate once installed; do not assume the MCP tools are callable
-  yet.
-license: N/A — wrapper only, no third-party content copied (see SOURCES.md)
+owner: CMO
+origin: mooniex-org
+scope: >-
+  FREE MeiGen MCP tools only — gallery search, inspiration, prompt enhancement.
+  It does NOT generate the final asset: no MeiGen API key exists or is wanted, so
+  the finished prompt is handed to the org's Fal.ai pipeline under the
+  ask-before-paid rule (CEO decision 2026-07-13). Requires the meigen plugin
+  installed and /meigen:setup run.
+description: Gallery search and prompt enhancement via the MeiGen MCP — free tools only. Trigger on /mooniex-image-gen-skill when writing an image prompt for key art, posters, or thumbnails. Does NOT generate the image — no MeiGen key exists, so the finished prompt goes to the org's Fal.ai pipeline under ask-before-paid rules.
 ---
 
 # MoonieX Image-Gen Skill (MeiGen MCP wrapper)

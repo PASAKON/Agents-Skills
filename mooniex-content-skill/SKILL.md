@@ -1,17 +1,12 @@
 ---
 name: mooniex-content-skill
-description: >
-  One unified content + copy skill for the MoonieX org. Covers marketing copywriting
-  (landing/product/sales/about pages, ads, email), headline + CTA writing, line-by-line
-  copy editing and proofreading, content strategy (topic clusters, editorial/content
-  calendars, buyer-journey mapping, distribution), brand / tone-of-voice extraction into
-  a reusable voice profile, platform-native channel adaptation, and long-form writing.
-  Trigger phrases: "write copy", "marketing copy", "sales copy", "write a headline",
-  "CTA", "ad copy", "email copy", "landing page copy", "edit my copy", "polish this",
-  "proofread", "tighten this up", "make this more persuasive", "content strategy",
-  "content plan", "content calendar", "editorial calendar", "topic clusters",
-  "pillar page", "buyer journey content", "marketing ideas", "growth ideas",
-  "brand voice", "tone of voice", "voice guide", "extract my voice", "sound like me".
+owner: CMO
+origin: mooniex-curated
+scope: >-
+  Copywriting, copy editing, content strategy, brand voice, channel adaptation,
+  long-form. A curated merge of several upstream skills — per-feature attribution
+  in SOURCES.md, upstream licences in NOTICE.md. Not image or video production.
+description: The org's single skill for copywriting, copy editing, content strategy, and brand voice. Trigger on /mooniex-content-skill and any copy request — "write copy", "ad copy", "landing page copy", "edit my copy", "proofread", "content calendar", "brand voice", "เขียนคอนเทนต์", "เขียนแคปชั่น". Use instead of ecc:brand-voice, ecc:article-writing, ecc:content-engine, copywriting, copy-editing, content-strategy.
 ---
 
 # MoonieX Content Skill

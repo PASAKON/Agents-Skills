@@ -1,26 +1,13 @@
 ---
 name: mooniex-kpi-skill
-description: >-
-  The MoonieX measurement and analytics authority. Use this skill to choose
-  metrics, model attribution, and work with the org's real tracking
-  architecture. Covers: KPI selection, north-star metric, guardrail metric,
-  the AARRR pirate funnel, leading vs lagging indicators, attribution and
-  attribution models (first-touch, last-touch, linear, time-decay,
-  position-based, multi-touch), attribution windows, CAC, LTV, LTV:CAC, ROAS
-  (blended vs channel), payback period, funnel metrics and funnel analysis,
-  cohort analysis and retention, event tracking, tracking plan, event taxonomy
-  and event naming, conversion tracking, dashboards and reporting cadence, and
-  the MoonieX-specific data model — webapp_user_events, webapp_user_activity_log,
-  webapp_user_activity_daily, the /api/track and /api/activity/track pipelines,
-  the closed event enum, Microsoft Clarity, Vercel Analytics, and the LuNar
-  conversion report. Trigger on: KPI, north-star metric, guardrail metric,
-  attribution, attribution model, multi-touch, first-touch, last-touch, CAC,
-  LTV, ROAS, payback period, funnel metrics, funnel analysis, cohort analysis,
-  event tracking, tracking plan, event taxonomy, conversion tracking, Meta CAPI,
-  pixel, dashboard, growth analytics, "how do I measure", "what should our north
-  star be", webapp_user_events, webapp_user_activity_log. For the broader growth
-  playbook see mooniex-growth-skill §10; this skill is the deep measurement +
-  MoonieX tracking-architecture reference.
+owner: CGO
+origin: mooniex-curated
+scope: >-
+  Measurement only — metric choice, attribution modelling, and the org's REAL
+  tracking architecture (System A webapp_user_events, System B
+  webapp_user_activity_log) plus the known G1-G4 measurement gaps. Documents what
+  is actually instrumented, not what should be. Does not run campaigns.
+description: The org's measurement authority — KPI choice, north-star, attribution, CAC/LTV/ROAS, funnel and cohort metrics, event tracking, and the real System A/B tracking tables. Trigger on /mooniex-kpi-skill and on "north star", "attribution", "CAC", "LTV", "ROAS", "tracking plan", "funnel metrics", "cohort". Use instead of the generic analytics skill.
 ---
 
 # MoonieX KPI & Measurement Skill

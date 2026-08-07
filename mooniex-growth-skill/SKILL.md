@@ -1,25 +1,13 @@
 ---
 name: mooniex-growth-skill
-description: >-
-  End-to-end growth and marketing-ops playbook for the MoonieX org. One skill
-  covering paid ads, Facebook/Meta ad campaigns, landing-page CRO and audits,
-  A/B testing, funnel strategy, ICP and persona definition, positioning and
-  messaging, pricing strategy and pricing-page design, go-to-market and product
-  launches, competitor analysis, and growth analytics. Use when the user asks
-  about: paid ads, PPC, Google Ads, Facebook Ads, Meta Ads, Instagram Ads,
-  LinkedIn Ads, ROAS/CPC/CPA, ad creative, retargeting, lookalike audiences,
-  conversion rate optimization (CRO), landing page audit, "why isn't my page
-  converting", CTA/form optimization, A/B test, split test, statistical
-  significance, sample size, funnel, ideal customer profile, ICP, buyer persona,
-  target audience, positioning, value proposition, messaging framework,
-  battlecard, sales enablement, pricing, pricing page, freemium, tiered pricing,
-  go-to-market, GTM, product launch, Product Hunt, Hacker News launch, waitlist,
-  competitor analysis, competitive matrix, SWOT, growth analytics, GA4,
-  conversion tracking, UTM, event tracking, attribution, signup flow CRO,
-  signup conversion, registration friction, onboarding flow optimization,
-  referral program, affiliate program, refer-a-friend, viral loop, lead magnet,
-  gated content, content upgrade, free tool strategy, engineering as marketing,
-  community-led growth, community strategy, or ambassador program.
+owner: CGO
+origin: mooniex-curated
+scope: >-
+  Acquisition and conversion: paid/Meta ads, CRO, A/B tests, funnels, ICP,
+  positioning, pricing, GTM, signup-flow CRO, referral and growth loops. A curated
+  merge — see SOURCES.md / NOTICE.md. For retention and lifecycle after signup use
+  mooniex-retention-skill; for measurement use mooniex-kpi-skill.
+description: The org's single acquisition + conversion skill — paid/Meta ads, CRO, A/B tests, funnels, ICP, positioning, pricing, GTM, referral and growth loops. Trigger on /mooniex-growth-skill and on "ads", "ROAS", "CRO", "landing page not converting", "A/B test", "pricing", "launch", "competitor", "ยิงแอด". Use instead of paid-advertising, facebook-ads, page-cro, ab-test-setup, launch-strategy, icp-builder, pricing-strategy.
 ---
 
 # MoonieX Growth & Marketing-Ops Skill
