@@ -35,6 +35,77 @@ specific failure happened first and got fixed.
   logos) — those are a different skill's job
 - Pure prose/story writing with no stated intent to feed a video generator
 
+## Interview before you write — do this first, every time
+
+**Ask before drafting. Ask a lot.** A prompt written from an unclarified brief
+is a guess dressed as a deliverable: it reads fine, generates cleanly, and is
+quietly not the shot the director wanted. Every question costs a few seconds.
+Every wrong clip costs a full render cycle and a queue slot.
+
+Ask in **batches of about four**, then batch again — 8-12 questions across two
+or three rounds is normal for a scene that matters. Offer concrete options
+rather than open prose ("body fully bagged / sheet-covered / already loaded"),
+because a director picks faster than they describe, and each option can carry
+its trade-off so the choice is informed.
+
+**The pass that pays for itself is the conflict check.** Before writing, hold
+the new answers against what the piece has already established and against
+physical reality, and surface anything that cannot be true at once. Real
+examples of what this catches:
+
+- "deep night, the whole frame dark" against "police vehicles on scene" —
+  emergency lights are the brightest thing in that frame; one of the two has
+  to give.
+- an ambulance standing by for a character the story has already established
+  as dead for over a day — its presence silently tells the audience someone
+  might still be saved.
+- a spec locked earlier in the project (duration, resolution) against a spec
+  the director just said out loud — ask which wins rather than picking.
+
+Raise these as questions, not corrections. The director usually has a reason,
+and when they don't, they would rather hear it before the render than after.
+
+### What to ask about
+
+Work down this list and ask about whatever the brief has not already settled:
+
+- **Subject state** — for anything charged (a body, an injury, a weapon,
+  a wound): how much is actually seen? "Already removed / covered / fully
+  visible" changes the emotional register *and* the content-filter risk in one
+  answer, so it is usually the highest-value question in the batch.
+- **Emotional register of each character** — numb, breaking down, turning
+  away. This is the shot's meaning; never assume it.
+- **Final image** — what the camera is holding on when the shot ends, and what
+  it must NOT be holding on.
+- **Camera** — locked, imperceptible creep, or a real move. Say which, in words
+  the model can act on.
+- **Headcount and roster** — exact number of people, each one's role, clothing
+  and position. Ask this explicitly whenever the frame has more than three
+  people (see the duplicate-figure rule below).
+- **Time of day and light sources** — and specifically what is lighting the
+  frame, not just how dark it is.
+- **Weather** — and how it interacts with anything unusual in the shot. The
+  best transparency proof in a ghost shot came from asking a throwaway-sounding
+  question about whether rain passed through the figure.
+- **What must NOT appear** — the director's no-list is more useful than their
+  yes-list, and it goes straight into `NEGATIVE`.
+- **Sound at the end** — where audio stops relative to picture.
+- **Continuity callbacks** — recurring props or motifs: present, absent, or
+  deliberately unremarked.
+
+### Record the answers in the block
+
+When the prompt lands in a durable file, write a short note above it saying
+which choices came from the director and why. The next person to touch it
+cannot tell a deliberate decision from drift, and will "fix" the deliberate one.
+
+### When to skip the interview
+
+Skip it for a small edit to an already-agreed prompt, or when the director has
+handed over a brief that already answers the list. Do not skip it because the
+brief *sounds* complete — a brief that names a location, a character and an
+action still usually leaves headcount, light, camera and the no-list open.
+
 ## Output format
 
 Always these blocks, in this order. Omit `DIALOGUE` if the scene has no
@@ -122,6 +193,38 @@ multiple separate prompts, not one.
   of re-uploading a raw image every time.
 - Kling reportedly enforces fewer prompt-structure rules than Seedance 2.0
   (less detail confirmed so far — treat as looser, not documented).
+
+**7. Crowded frames clone people — state the roster, not just the total.**
+A wide shot with several people, at night, in weather, with vehicles is the
+setup where these models invent extra figures: a fourth officer nobody asked
+for, a duplicate of a named character standing in the background, a half-body
+at the frame edge. Saying "six people" does not prevent it, because a number
+is not something the model can check itself against while painting.
+
+What works is making every figure individually specified and individually
+occupied, then closing the door explicitly:
+
+- give each person a **distinct role, distinct clothing, distinct position,
+  and one distinct task** — three uniformed officers are three clone risks,
+  but "one at the tape with a clipboard, one at the car on the radio, one at
+  the foot of the stairs facing out" are three different pictures;
+- state totals **per role** in `NEGATIVE`, not as one lump sum;
+- name the specific failure modes to exclude — duplicated or mirrored people,
+  a second copy of a named character, extra background figures, half-figures
+  at the edges, a reflection or shadow that reads as another person;
+- when a character appears in two states in one story beat (a person and
+  their body, a person and their reflection or spirit), tag only one of them
+  and describe the other so it cannot be rendered as a face at all — an
+  unseen or covered version removes the duplicate-face risk and usually the
+  content-filter risk in the same stroke.
+
+**8. Never name a location in plain words that you have not tagged.**
+A place named but untagged is a place the model invents from scratch, and it
+will not match the one already established elsewhere in the piece. Either tag
+the reference for it, or remove the name and describe only what is actually
+on screen. This catches a specific, easy mistake: writing a room or building
+number into `NEGATIVE` while saying its interior is never seen — the number
+buys nothing, and invites the model to build the thing you just excluded.
 
 ## Refusal / clarification conditions
 
