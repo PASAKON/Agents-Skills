@@ -48,6 +48,22 @@ rather than open prose ("body fully bagged / sheet-covered / already loaded"),
 because a director picks faster than they describe, and each option can carry
 its trade-off so the choice is informed.
 
+**Read the existing script first, then ask.** Whatever durable file the piece
+lives in — the prompt file, the sheet, the treatment — read it before opening
+your mouth. Half of what feels like an open question is usually already
+settled somewhere in it, and asking about a decided thing spends the
+director's patience on nothing. It catches the opposite case too: a new scene
+that contradicts one already written, which is far cheaper to raise now than
+after both have been generated.
+
+**When the director is at the screen, ask with the picker, not with prose.**
+Put the questions in `AskUserQuestion` — up to four per call, so a
+twelve-question interview becomes three rounds of clicking instead of three
+paragraphs of typing. Put the option you recommend first and label it as
+recommended, and write each trade-off into its own option description rather
+than into a preamble above the list. Fall back to plain text only when the
+director is on a phone, in mobile chat, or otherwise not looking at a picker.
+
 **The pass that pays for itself is the conflict check.** Before writing, hold
 the new answers against what the piece has already established and against
 physical reality, and surface anything that cannot be true at once. Real
@@ -98,6 +114,22 @@ Work down this list and ask about whatever the brief has not already settled:
 When the prompt lands in a durable file, write a short note above it saying
 which choices came from the director and why. The next person to touch it
 cannot tell a deliberate decision from drift, and will "fix" the deliberate one.
+
+**Write down what the shot deliberately does NOT have, with the reason.** This
+is the half that gets lost, and it is the half a generator will helpfully add
+back on its own: the embrace nobody asked for, the tears that undercut the
+next scene, the memory playing inside the pupil the director wanted empty. An
+absence with no recorded reason reads as an oversight to everyone who comes
+after, including you in a week. One line each, in the note above the block and
+again in `NEGATIVE`.
+
+**When your recommendation contradicts the written spec, say so in the same
+breath.** Sometimes the better shot is not the specified shot — but quietly
+substituting it means the director approves something they did not choose, and
+finds out in the render. Put the departure and its reason on the record and let
+them decide. Mark which parts of a block are your call rather than theirs, too;
+that is what tells them where it is safe to overrule you without re-litigating
+the whole scene.
 
 ### When to skip the interview
 
