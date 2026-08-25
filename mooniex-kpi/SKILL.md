@@ -427,3 +427,76 @@ broker components change, re-run the survey and update the affected rows
 (especially the §5 gap table once G1/G2/G3/G4 are fixed). To update the upstream
 portion: diff agentkits-marketing vs the pinned commit in `SOURCES.md`, port real
 fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).
+
+## Broker signup measurement — what actually counts a signup
+
+Moved here from the org memory index 2026-08-25. Verified 2026-06-15 read-only
+against prod.
+
+- **XM real signups = XM "new customer registration" emails**
+  (`from:site@xm.com`, body `MT5 ID</strong>: <id>` → HTML-strip →
+  `MT5 ID: <id>`) in Gmail `pass.gob1@gmail.com`. The XM Partner
+  `trader-list/auto-rebate` API has **no** `registrationDate` — rows carry only
+  traderId / clientId / autoRebatePlanName — so `xm_new` read **0 for weeks**.
+  Fixed 2026-06-15: `xmSignupCountForDay()` in webapp
+  `src/lib/brokers/gmail.ts` counts distinct MT5 IDs per day (deduped), wired
+  into `xmDailySignups` → the `broker-signup-snapshot` cron →
+  `webapp_broker_signup_daily.new_accounts` → `/admin/brokers/signups`.
+- **Exness real signups = the accounts API** `client_account_created`, split per
+  source via `partner_account` / `partner_code` (the affiliate link;
+  `mvwpif5crx` is the web default) in `webapp_broker_source_daily`. The Exness
+  report also gives `volume_lots` + `reward_usd` per client — real rebate dollars.
+- **verify-tickets undercount and mislead.** `claudeflow_verify_tickets` (LuNar
+  chat → verify) only catches customers who DM LuNar, and most rejections are
+  legitimate (the submitted account is genuinely not our referral, or a typo).
+  The Gmail verify search itself works. **Verify-ticket success rate is not the
+  signup KPI.**
+- **Real volume, verified:** roughly 4-5 XM signups per month and declining
+  (90d = 22, 30d = 4-5, 7d = 1). The real battle is conversion, not measurement.
+
+**Gotcha — querying prod Supabase from local.** `vercel env pull` returns an
+UNUSABLE (masked, sensitive-var) `SUPABASE_SERVICE_ROLE_KEY`; it 401s on direct
+REST locally **even though prod is fine** — the cron works. Do not conclude the
+prod DB is down. Query it with the Supabase Management API and the
+`SUPABASE_ACCESS_TOKEN` (sbp_ PAT):
+`POST https://api.supabase.com/v1/projects/tlokhyqpthvxabweekps/database/query`
+with `{query}`. Webapp and claudeflow share that project. Webapp migrations
+apply via `scripts/migrate.mjs` (PAT, not the service key) or automatically on
+merge to `bootstrap/landing-mvp`.
+
+## Verifying one XM account: is it ours, and what does it earn?
+
+Moved here from the org memory index 2026-08-25. Read-only method.
+
+`XM_API_TOKEN` lives **only** on the prod VPS (`mooniex-vps` = Contabo,
+`/root/projects/mooniex-claudeflow/.env`), never in a local .env. Read it
+read-only (`ssh mooniex-vps grep ^XM_API_TOKEN ...`) and make the API call
+**from local** — the classifier blocks writing or executing scripts on prod,
+while reading one config value plus a local fetch stays inside the
+read-only-diagnostics approval. Never echo the token.
+
+- Base `https://mypartners.xm.com/api`, header `Authorization: Bearer $XM_API_TOKEN`
+- **Is it ours, and on what plan:**
+  `GET /trader-statistics/trader-list/auto-rebate?startTime=2019-01-01T00:00:00&endTime=<now, no .ms/Z>`
+  → array of `{clientId, autoRebatePlanName, traderId}`. `traderId` is the MT5
+  login. Present ⇒ it is a MoonieX rebate account.
+- **Trades and commission:** `GET /trader-statistics/trades?startTime=..&endTime=..`
+  — window of about a month or less; wider ranges return an empty body. Rows:
+  `{loginId, instrumentGroup, instrument, campaignName, commission, lots, accountType, ...}`
+  where `commission` is what XM pays MoonieX per trade.
+
+**Plan taxonomy** (2026-06-18, 5,672 traders): Default 4,626 / VIP 209 /
+Event 205 / none 632. `campaignName` tags: Default = "Mooniex (Main)" or
+"Piew Mooniex (A25)", Event = "Mooniex (Event)" / "Mooniex (Funds)",
+VIP = "Mooniex (Main)".
+
+**Gross $/lot XM → MoonieX** (real 30-day commission ÷ lots, Standard):
+GOLD/XAUUSD sits in **"Forex Group 2"** (~4,087 gold rows vs a handful of FX, so
+Group 2 ≈ the gold rate). Event, Default and VIP all land near **$19/lot gold**
+and **$20/lot crypto**. Ultra-Low accounts (GOLD#/GOLDm# in "Ultra Low
+Standard 4") are ≈ $9.56/lot. **XM rebate is $/lot, not a percentage** — the
+only percentage is MoonieX's 80% IB share, which is what turns $19 into the
+~$15/lot gold figure quoted to users.
+
+**Rebate accrues only when the account TRADES** (lots > 0). A funded but idle
+account shows zero commission — that is normal, not a fault.

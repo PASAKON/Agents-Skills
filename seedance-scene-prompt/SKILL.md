@@ -425,3 +425,90 @@ context changes.
 - [[reference_visual_audio_sfx_prompt_pattern]] — memory note this skill was
   distilled from; keep both in sync if the Seedance/Kling capability picture
   changes.
+
+## Continuity chaining — `@Video 1`, and where a chain must break
+
+Moved here from the org memory index 2026-08-25. Every rule below cost a real
+render to learn.
+
+**The picker comes first; the tag alone does nothing.** Chaining works, but the
+clip must be attached through the composer's video picker (`+ VIDEO TO EXTEND`)
+*before* `@Video 1` means anything. Writing the tag into a composer with no
+video attached leaves it unbound — the prompt still renders, silently, with no
+continuity reference and at full cost. Order is always: pick the video, confirm
+it is attached, then write the tag.
+
+**The tag is written `@Video 1`, with a space — never `@Video1`.** CEO rule,
+2026-08-20, stated after a prompt went out with the closed-up form. Same failure
+class as a wrong element ID: the tag does not bind, and the clip renders with no
+continuity reference at all, silently, at full cost. `@Video 1`, `@Video 2`, and
+so on.
+
+**A fix to any clip invalidates every clip after it in the same chain.** A
+14-link chain means an error at link 3 costs 12 re-renders — roughly 4 hours at
+20-22 minutes each, one clip at a time per account.
+
+**So do not build one long chain.** Find the moments where something
+legitimately fills the frame — a person or object crossing, passing behind a
+wall or column, a door opening onto white, a camera flash, a curtain drawn — and
+make those **hard breaks**. Across a hard break `@Video 1` is unnecessary,
+because the viewer cannot see continuity there anyway; style refs plus
+`@Character` carry it. Chains of 2-3 clips cap the blast radius at about an hour.
+
+Three consequences:
+
+- **Character plates get *more* critical, not less.** Every segment that starts
+  at a hard break begins without `@Video 1`, so the face is held only by
+  `@Character`. Weak plates mean the face changes at every break.
+- **A deliberate visual change must sit on a hard break.** If a character is
+  meant to look different in the next clip, chaining through `@Video 1` makes
+  the model "correct" that difference away.
+- **Burn one calibration render before clip 1.** Clip 1 fixes palette, camera
+  height, lens, track speed, light quality and aspect ratio for everything
+  downstream, and none of it is fixable later. Shoot a throwaway empty-corridor
+  clip at the real spec first, then use it as clip 1's `@Video 1`.
+
+A flat lateral track (camera perpendicular to the wall, Anderson-style) has
+linear parallax and stitches far more forgivingly than any 3D camera move — a
+technical reason to choose that grammar, not only an aesthetic one.
+
+## Two lines that go in EVERY prompt, forever
+
+CEO rule, 2026-08-21, after catching a Scene 1 prompt that had lost the audio
+clause. These are not stylistic choices — he has applied both from the start.
+Rules 4 and 7 above cover the *ideas*; this section is the exact wording and,
+more importantly, the placement rule that keeps them from being lost again.
+
+**1. No duplicate character.** Standard wording: `no duplicate or repeated
+faces, no cloned or twin figures`, plus the positive form — `every single
+person has a different face, build, age, hair and clothing, and no face is
+repeated anywhere`.
+
+**2. No background sound — and no sound at the start or the end.** Video
+prompts only. Three separate bans, and the middle one is the one that gets
+missed: the clip may not **open** with a whoosh, riser, sting, chord or breath,
+and may not **close** with a tail, swell or final chord. The first frame begins
+in the middle of whatever the place is already doing; the last frame simply
+stops, with no audio fade at either end. The only permitted sounds are ones
+physically made by something inside the shot.
+
+**Put each of them in BOTH places, because one alone gets dropped:**
+
+- inside the SOUND block, affirmatively — `NO BACKGROUND SOUND, NO BACKGROUND
+  MUSIC AND NO SCORE OF ANY KIND AT ANY POINT … EVERY SINGLE SOUND HEARD IS
+  MADE BY SOMETHING VISIBLE OR PRESENT IN THE ROOM`
+- at the head of the final negatives line — `no background sound, no background
+  music, no soundtrack, no score, no musical instrument, no swell or sting, no
+  voiceover, no narration, no added or artificial sound effects, no opening
+  sound, no intro sting, no whoosh, no riser, no closing sound, no outro, no
+  final chord, no audio tail, no fade-in or fade-out on the sound`
+
+**Why it keeps getting lost:** the SOUND paragraph said "No music of any kind"
+and that read as covering it, while the negatives line — the part the model
+weighs hardest — carried no audio term at all. A rule that lives in only one
+place in the prompt survives exactly until the next rewrite.
+
+**When you add a rule, sweep every unfired prompt file in the project, not just
+the one in your hand.** On 2026-08-21 fourteen files were missing the audio rule
+while the CEO believed it had been standard throughout. Before handing over any
+prompt, grep the file for both rules rather than trusting recollection.
