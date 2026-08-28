@@ -7,7 +7,7 @@ scope: >-
   Seedance 2.0 and similar audio-capable video models. Not for static images (see
   meigen), product or UI shots (see mooniex-tool-builder), or prose writing with no
   video-gen intent.
-description: Write copyright-safe, character-consistent cinematic scene prompts for Seedance 2.0. Trigger on /seedance-scene-prompt, "เขียน prompt ฉากนี้", "ขอ prompt ฉาก", "write me a scene prompt", "video prompt สำหรับ Seedance", "@Image1 @Image2". Not for static-image prompts.
+description: Write copyright-safe, character-consistent cinematic scene prompts for Seedance 2.0 and 2.5 — including the researched house structure (tech-spec-first, per-reference jobs, bracketed [Ns] timeline beats, tone-tagged dialogue). Trigger on /seedance-scene-prompt, "เขียน prompt ฉากนี้", "ขอ prompt ฉาก", "write me a scene prompt", "video prompt สำหรับ Seedance", "@Image1 @Image2". Not for static-image prompts.
 ---
 
 # Seedance Scene Prompt
@@ -137,6 +137,67 @@ Skip it for a small edit to an already-agreed prompt, or when the director has
 handed over a brief that already answers the list. Do not skip it because the
 brief *sounds* complete — a brief that names a location, a character and an
 action still usually leaves headcount, light, camera and the no-list open.
+
+## THE HOUSE STRUCTURE — Seedance 2.0 & 2.5 · researched 2026-08-28
+
+Distilled from Higgsfield's own Seedance guide, fal.ai's guide, ChatCut's five
+formulas and MindStudio's timeline-prompting study, then proved on the
+«Sorry, Sir» production. **This ordering is load-bearing — use it for every
+video prompt before the older three-block format below.**
+
+```
+20s · 720p · 16:9 · ONE CONTINUOUS TAKE, NO CUTS      ← line one, always
+REFERENCES — each with an explicit JOB:
+@char_x — face, build and costume only
+@loc_y  — the room, its light and floor; nothing else
+[0s]  Shot type: subject + physical action. Camera <operator term>. Atmosphere.
+[7s]  next beat …
+[14s] hold / exit.
+AUDIO: room tone, <one foley detail>, no music
+CRITICAL NEGATIVES (5–8, the ones that killed takes) … then the house wall.
+```
+
+**The ten rules, each paid for:**
+
+1. **Tech spec on line ONE** — duration · resolution · aspect · camera-lock.
+   Burying `20s · 720p` at the bottom (our old habit) wastes the model's
+   highest-attention tokens. Without an explicit "no cuts" Seedance invents
+   its own edit.
+2. **Bracketed second-marks beat prose.** `[0s] [7s] [14s]` distributes the
+   action across the clip instead of cramming one static frame — measurably
+   better adherence. **3–4 beats max, 2–3 sentences each**; an overloaded
+   timestamp is the top documented failure mode.
+3. **Beat order inside each timestamp:** shot type → subject + action →
+   camera move → atmosphere.
+4. **Camera in operator vocabulary only** — dolly, push-in, locked-off,
+   lateral track, whip pan, snap zoom. Never "the camera moves". State what
+   it is NOT doing.
+5. **Dialogue: tone BEFORE the words, inline, one sentence.**
+   `He says it quietly, warm and unhurried: "Sir. You should have told me."`
+   Short lines only — long monologues drift out of lip-sync; split a speech
+   across beats. Over-stacked emotion words ("energetic, animated, excited")
+   overdrive the mouth.
+6. **Physical verbs.** slot, fracture, snap, wipe, drop — never "becomes",
+   "begins to", "seems to".
+7. **Every reference carries a stated JOB.** An unjobbed reference is a
+   coin-flip on what the model borrows from it. `@image1 as first-frame
+   reference` / `face only` / `mood only, not the framing`.
+8. **Negatives: few and aimed first.** Put the 5–8 bans that have actually
+   killed takes at the top; the long house wall after. Short targeted "no X"
+   phrases steer; a 200-word undifferentiated wall buries the one that
+   matters.
+9. **Front-load.** The first 50–100 words carry the shot.
+10. **One noun per character, forever.** "Dupe" every time — never rotating
+    he / the cleaner / the man. Subject-reference drift is a documented
+    failure mode, and it also breaks reference binding.
+
+**Multi-shot inside one clip:** label `Shot 1 / Shot 2` (or "cut to"), declare
+the cut count in the tech line ("exactly ONE jump cut"), and keep each shot's
+beats bracketed. Three cuts in one generation is the practical ceiling.
+
+**Audio is never optional:** an unspecified soundtrack comes back scored like
+a car advert. Name the room tone and one foley detail, then "no music" if you
+mean it.
 
 ## Output format
 
