@@ -191,6 +191,18 @@ CRITICAL NEGATIVES (5–8, the ones that killed takes) … then the house wall.
     he / the cleaner / the man. Subject-reference drift is a documented
     failure mode, and it also breaks reference binding.
 
+**Duration ceiling is 20 seconds.** Measured on Higgsfield 2026-08-28 (CEO):
+the slider exposes higher values but 25s does not generate. Write nothing
+longer than 20s. A scene that needs more becomes two clips — split on a
+natural silence, and open the second with "CONTINUES <first> UNBROKEN — same
+frame, same light, same positions, no re-staging" plus the identical
+reference list. Budget ~45-50 spoken words per 20s clip.
+
+**Reference budget: about 10 chips.** Past ten, characters blend and costumes
+swap. Cut silent background people from the reference list and describe them
+in prose instead — a reference is for someone whose face or action the shot
+depends on.
+
 **Multi-shot inside one clip:** label `Shot 1 / Shot 2` (or "cut to"), declare
 the cut count in the tech line ("exactly ONE jump cut"), and keep each shot's
 beats bracketed. Three cuts in one generation is the practical ceiling.
