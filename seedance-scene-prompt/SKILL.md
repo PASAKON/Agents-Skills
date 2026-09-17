@@ -585,3 +585,15 @@ place in the prompt survives exactly until the next rewrite.
 the one in your hand.** On 2026-08-21 fourteen files were missing the audio rule
 while the CEO believed it had been standard throughout. Before handing over any
 prompt, grep the file for both rules rather than trusting recollection.
+
+---
+
+## Scene structure comes first — IRON-RULES §51
+
+This skill covers the shot. It does not decide whether the scene deserves to
+exist. Before any scene here is prompted or generated, it must have passed
+`tig-scene-engine`: Goal, Obstacle, Tactic, Reversal, Value Shift, with the
+audience's before-verdict and after-verdict named. A scene that survives the
+removal test — cut it and the chain to the story goal still holds — does not get
+generated. Mandatory for films, branded shorts and narrative video; not for
+15-30s ad clips, explainers or single standalone shots.
