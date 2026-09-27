@@ -866,3 +866,7 @@ Merged skill — full per-feature attribution + pinned commits in `SOURCES.md`, 
 - Excluded (proprietary, no license — not shipped): homepage-audit, positioning-basics, marketing-principles (Brian Wagner)
 
 To update: diff the repos above vs the pinned commits in `SOURCES.md`, port real fixes, re-pin (MoonieX wiki `playbooks/skill-maintenance.md`).
+
+## Field notes
+
+- 2026-09-28 [MISSING] §9 Go-to-Market / §10 Growth Analytics — a multi-year MRR forecast that sets ad spend as a % of last month's MRR with a constant CAC compounds exponentially once funding raises the share. v1 of the Chatudo model exploded after seed; v2 still spent ~฿19M/mo on ads for almost no extra shops. Model channel saturation from the start (CAC = CAC0 × (1 + spend / saturation spend)) and cap monthly spend per market. With the cap, the base case moved from 2030-10 to 2031-02 · evidence: CMO session a82def00, scratchpad `chatudo_model.py`, artifact RGs4f2GGoffxXSjX7vxTQf#plan · status: pending
